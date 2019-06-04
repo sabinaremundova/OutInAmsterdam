@@ -3,6 +3,6 @@ export class VenueLocation {
   public city: string;
   public adress: string;
   public zipcode: string;
-  public latitude: number;  // TODO ?
-  public longitude: number;  // TODO ?
+  public latitude: number;
+  public longitude: number;
 }
