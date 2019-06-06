@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { Venue } from './shared/model/venue.model';
-
-import venues from 'src/assets/data/establishment-data.json';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +7,4 @@ import venues from 'src/assets/data/establishment-data.json';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'OutInAmsterdam';
-  public venues: Venue[] = venues;
 }

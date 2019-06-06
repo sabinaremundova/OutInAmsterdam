@@ -1,0 +1,46 @@
+<div class="establishmentsMenuContainer">
+  <h5 class="filterHeading">
+    Filter by:
+  </h5>
+
+  <div class="filterFieldsRow">
+    <div class="filterField">
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="nameFilter">
+      </mat-form-field>
+    </div>
+
+    <div class="filterField">
+      <mat-form-field>
+        <input matInput placeholder="Start year" type="number" [(ngModel)]="startYearFilter">
+      </mat-form-field>
+    </div>
+
+    <div class="filterField">
+      <mat-form-field>
+        <input matInput placeholder="Postcode" [(ngModel)]="postcodeFilter">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="filterFieldCities">
+    <mat-form-field>
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let city of citiesFilter" [selectable]="selectable"
+                  [removable]="true" (removed)="removeCity(city)">
+          {{ city }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Cities"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="addCity($event)">
+      </mat-chip-list>
+    </mat-form-field>
+  </div>
+
+  <div class="buttonsRow">
+    <button mat-flat-button color="primary" (click)="applyFilters()">Apply filters</button>
+    <button mat-flat-button (click)="clearFilters()">Clear filters</button>
+  </div>
+</div>

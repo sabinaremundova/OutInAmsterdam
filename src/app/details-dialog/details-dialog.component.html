@@ -1,0 +1,34 @@
+<div class="dialogContent">
+  <h2>{{ data.details.en.title }}</h2>
+  <div>{{ data.details.en.calendarsummary }}</div>
+
+  <div>
+    <h5>Address</h5>
+    <p>
+      {{ data.location.adress }}
+      <br>
+      {{ data.location.city }}
+      <br>
+      {{ data.location.zipcode }}
+    </p>
+  </div>
+
+  <div *ngIf="data.urls">
+    <h5>Links</h5>
+    <ng-container *ngFor="let link of data.urls">
+      <a href="{{ link }}">{{ link }}</a>
+    </ng-container>
+  </div>
+
+  <div *ngIf="data.details.en.longdescription">
+    <h5>Description</h5>
+    <p [innerHtml]="data.details.en.longdescription"></p>
+  </div>
+
+  <div *ngIf="data.media">
+    <h5>Images</h5>
+    <div *ngFor="let media of data.media">
+      <img src="{{ media.url }}">
+    </div>
+  </div>
+</div>

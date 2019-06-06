@@ -1,4 +1,3 @@
-export class VenueMedia {
-  public url: string;
-  public main: boolean; // TODO ?
+export interface VenueMedia {
+  url: string;
 }

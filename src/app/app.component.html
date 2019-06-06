@@ -1,5 +1,23 @@
-<h1>{{venues[0].title}}</h1>
-<h3>{{venues[0].location.latitude}}</h3>
-<div [innerHTML]="venues[0].details.en.longdescription"></div>
+<!-- header -->
+<mat-toolbar color="primary">
+  <span>Establishments in and nearby Amsterdam</span>
+</mat-toolbar>
 
-<router-outlet></router-outlet>
+<div class="appContainer">
+  <!-- filters -->
+  <div class="menuContainer">
+    <app-establishments-menu></app-establishments-menu>
+  </div>
+  <app-table-view></app-table-view>
+</div>
+
+<!-- switching between table and map view>
+<div class="viewContainer">
+  <mat-tab-group color="accent">
+    <mat-tab label="Table">
+      <app-table-view></app-table-view>
+    </mat-tab>
+    <mat-tab label="Map">
+    </mat-tab>
+  </mat-tab-group>
+</div-->
