@@ -4,6 +4,5 @@ export interface VenueLocation {
   adress: string;
   zipcode: string;
   latitude: number;
-  latitude: number;
-
+  longitude: number;
 }

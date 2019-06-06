@@ -33,7 +33,7 @@
         <input placeholder="Cities"
                [matChipInputFor]="chipList"
                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-               [matChipInputAddOnBlur]="addOnBlur"
+               [matChipInputAddOnBlur]="true"
                (matChipInputTokenEnd)="addCity($event)">
       </mat-chip-list>
     </mat-form-field>
