@@ -5,7 +5,6 @@ import {MatChipInputEvent} from '@angular/material';
 
 import {DataHandlerService} from '../shared/service/data-handler.service';
 
-import establishments from '../../assets/data/establishment-data.json';
 
 @Component({
   selector: 'app-establishments-menu',
@@ -27,7 +26,6 @@ export class EstablishmentsMenuComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.dataHandler.venues = establishments;
   }
 
   public applyFilters() {
@@ -46,7 +44,7 @@ export class EstablishmentsMenuComponent implements OnInit {
   }
 
   public clearFilters() {
-    this.dataHandler.venues = establishments;
+    this.dataHandler.loadEstablishments();
   }
 
   public addCity(event: MatChipInputEvent) {

@@ -2,15 +2,21 @@ import {Injectable} from '@angular/core';
 
 import {Venue} from '../model/venue.model';
 
+import establishments from '../../../assets/data/establishment-data.json';
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataHandlerService {
 
-  public venues: Venue[] = [];
+  public venues: any[] = establishments;
   public selectedVenue: Venue;
 
   constructor() { }
+
+  public loadEstablishments() {
+    this.venues = establishments;
+  }
 
   public filterByName(substring: string) {
     this.venues = this.venues
@@ -28,8 +34,14 @@ export class DataHandlerService {
 
   public filterByStartYear(year: number) {
     this.venues = this.venues.filter((v: Venue) => {
-      const startYear = new Date(v.dates.startdate).getFullYear();
-      return startYear ? startYear === year : false;
+      const startDate = v.dates.startdate;
+
+      if (!startDate) {
+        return false;
+      }
+      const startYear = startDate.slice(startDate.length - 4, startDate.length);
+
+      return startYear === year.toString();
     });
   }
 
